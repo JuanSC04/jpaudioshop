@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JP AudioStudio | Audífonos Inalámbricos & Accesorios Apple</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fuentes Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome para Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- CONTROLES RADIO BUTTONS CSS PARA VENTANAS MODALES -->
+  <input type="radio" id="close-all" name="modal-flow" class="modal-control" checked>
+  <input type="radio" id="step-cart-open" name="modal-flow" class="modal-control">
+  <input type="radio" id="step1-open" name="modal-flow" class="modal-control">
+  <input type="radio" id="step2-open" name="modal-flow" class="modal-control">
+  <input type="radio" id="step3-cod-open" name="modal-flow" class="modal-control">
+  <input type="radio" id="step4-success-open" name="modal-flow" class="modal-control">
+
+  <!-- Navegación Header -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="brand-jp">JP</span> <i class="fa-brands fa-apple"></i> Audio<span>Studio</span>
+    </div>
+    <nav>
+      <a href="#hero">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <label for="step-cart-open" class="btn-cart-nav">
+        <i class="fa-solid fa-cart-shopping"></i> Carrito (<span id="cart-count">0</span>)
+      </label>
+      <a href="#contacto" class="btn-nav">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Sección Hero / Banner -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <span class="badge"><i class="fa-solid fa-bolt"></i> Colección AirPods 2026</span>
+      <h1>Sonido Supremo & Ecosistema Apple</h1>
+      <p>Siente cada detalle. Descubre la máxima libertad inalámbrica y la mejor tecnología en audífonos con el sello de calidad JP AudioStudio.</p>
+      <div class="hero-btns">
+        <a href="#catalogo" class="btn-primary">Ver Audífonos <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="glow-bg"></div>
+      <img src="https://images.unsplash.com/photo-1565536421966-1e4aec32c7e7?auto=format&fit=crop&w=800&q=80" alt="Audífonos Inalámbricos JP AudioStudio">
+    </div>
+  </section>
+
+  <!-- Sección de Catálogo -->
+  <section id="catalogo" class="products-section">
+    <div class="section-header">
+      <h2>Catálogo de Productos</h2>
+      <p>Selecciona tus productos preferidos e incrementa la cantidad fácilmente</p>
+    </div>
+
+    <div class="tabs-container">
+      <input type="radio" id="tab-audifonos" name="catalog-tabs" checked>
+      <input type="radio" id="tab-cargadores" name="catalog-tabs">
+      <input type="radio" id="tab-fundas" name="catalog-tabs">
+
+      <div class="tabs-nav">
+        <label for="tab-audifonos" class="tab-label">
+          <i class="fa-solid fa-headphones"></i> Audífonos
+        </label>
+        <label for="tab-cargadores" class="tab-label">
+          <i class="fa-solid fa-plug-charging"></i> Cargadores
+        </label>
+        <label for="tab-fundas" class="tab-label">
+          <i class="fa-solid fa-mobile-screen-button"></i> Fundas
+        </label>
+      </div>
+
+      <!-- AUDÍFONOS -->
+      <div class="tab-content tab-content-audifonos">
+        
+        <!-- AirPods Gen 1 -->
+        <div class="product-card" data-id="gen1" data-name="AirPods Gen 1" data-price="69000">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=600&q=80" alt="AirPods Gen 1">
+          </div>
+          <div class="card-info">
+            <h3>AirPods Gen 1</h3>
+            <p class="description">Diseño clásico ligero, ajuste cómodo y enlace instantáneo.</p>
+            <div class="card-footer">
+              <span class="price">$69.000</span>
+              <div class="qty-selector">
+                <button class="btn-qty minus-btn" onclick="updateQty('gen1', -1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-number" id="qty-gen1">0</span>
+                <button class="btn-qty plus-btn" onclick="updateQty('gen1', 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AirPods Gen 2 -->
+        <div class="product-card" data-id="gen2" data-name="AirPods Gen 2" data-price="79000">
+          <div class="card-tag">Más Popular</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=600&q=80" alt="AirPods Gen 2">
+          </div>
+          <div class="card-info">
+            <h3>AirPods Gen 2</h3>
+            <p class="description">Conexión inalámbrica rápida, estuche de carga y comando por voz.</p>
+            <div class="card-footer">
+              <span class="price">$79.000</span>
+              <div class="qty-selector">
+                <button class="btn-qty minus-btn" onclick="updateQty('gen2', -1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-number" id="qty-gen2">0</span>
+                <button class="btn-qty plus-btn" onclick="updateQty('gen2', 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AirPods Gen 3 -->
+        <div class="product-card" data-id="gen3" data-name="AirPods Gen 3" data-price="99000">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?auto=format&fit=crop&w=600&q=80" alt="AirPods Gen 3">
+          </div>
+          <div class="card-info">
+            <h3>AirPods Gen 3</h3>
+            <p class="description">Audio espacial con seguimiento dinámico de la cabeza y resistencia al agua.</p>
+            <div class="card-footer">
+              <span class="price">$99.000</span>
+              <div class="qty-selector">
+                <button class="btn-qty minus-btn" onclick="updateQty('gen3', -1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-number" id="qty-gen3">0</span>
+                <button class="btn-qty plus-btn" onclick="updateQty('gen3', 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AirPods Gen 3 PRO -->
+        <div class="product-card highlight-card" data-id="gen3pro" data-name="AirPods Gen 3 PRO" data-price="119000">
+          <div class="card-tag pro-tag">Pro Level</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?auto=format&fit=crop&w=600&q=80" alt="AirPods Gen 3 PRO">
+          </div>
+          <div class="card-info">
+            <h3>AirPods Gen 3 PRO</h3>
+            <p class="description">Cancelación activa de ruido pro, modo ambiente y almohadillas de silicona.</p>
+            <div class="card-footer">
+              <span class="price">$119.000</span>
+              <div class="qty-selector">
+                <button class="btn-qty minus-btn" onclick="updateQty('gen3pro', -1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-number" id="qty-gen3pro">0</span>
+                <button class="btn-qty plus-btn" onclick="updateQty('gen3pro', 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AirPods Gen 4 -->
+        <div class="product-card" data-id="gen4" data-name="AirPods Gen 4" data-price="89000">
+          <div class="card-tag new-tag">Nuevo</div>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" alt="AirPods Gen 4">
+          </div>
+          <div class="card-info">
+            <h3>AirPods Gen 4</h3>
+            <p class="description">Última generación con arquitectura acústica renovada y carga USB-C.</p>
+            <div class="card-footer">
+              <span class="price">$89.000</span>
+              <div class="qty-selector">
+                <button class="btn-qty minus-btn" onclick="updateQty('gen4', -1)"><i class="fa-solid fa-minus"></i></button>
+                <span class="qty-number" id="qty-gen4">0</span>
+                <button class="btn-qty plus-btn" onclick="updateQty('gen4', 1)"><i class="fa-solid fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARGADORES -->
+      <div class="tab-content tab-content-cargadores">
+        <div class="empty-state">
+          <i class="fa-solid fa-boxes-packing empty-icon"></i>
+          <h3>No disponible por ahora</h3>
+          <p>Estamos reabasteciendo nuestro catálogo de cargadores y adaptadores Apple. ¡Consulta con nosotros para conocer próximas fechas de llegada!</p>
+          <a href="https://wa.me/573180549717?text=Hola%20JP%20AudioStudio,%20quisiera%20consultar%20disponibilidad%20de%20cargadores" target="_blank" class="btn-primary">Preguntar por WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- FUNDAS -->
+      <div class="tab-content tab-content-fundas">
+        <div class="empty-state">
+          <i class="fa-solid fa-shield-cat empty-icon"></i>
+          <h3>No disponible por ahora</h3>
+          <p>Nuestra colección de fundas de silicona y MagSafe estará disponible muy pronto con nuevos colores.</p>
+          <a href="https://wa.me/573180549717?text=Hola%20JP%20AudioStudio,%20quisiera%20consultar%20disponibilidad%20de%20fundas" target="_blank" class="btn-primary">Preguntar por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       VENTANAS MODALES
+       ========================================== -->
+
+  <!-- MODAL CARRITO DE COMPRAS -->
+  <div class="modal-overlay modal-cart-target">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-cart-shopping"></i> Tu Carrito de Compras</h3>
+        <label for="close-all" class="close-btn">&times;</label>
+      </div>
+      <div class="modal-body">
+        <div id="cart-items-container">
+          <!-- Se llena dinámicamente con JS -->
+        </div>
+
+        <div class="cart-summary" id="cart-summary">
+          <div class="summary-row">
+            <span>Total a Pagar:</span>
+            <span class="total-price" id="cart-total-price">$0</span>
+          </div>
+          <label for="step1-open" class="btn-action" id="btn-checkout">Procesar Pedido &rarr;</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 1: DATOS DE ENVÍO Y DOMICILIO -->
+  <div class="modal-overlay modal-step1-target">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>1. Ubicación de Entrega</h3>
+        <label for="close-all" class="close-btn">&times;</label>
+      </div>
+      <div class="cali-banner">
+        🚀 <strong>DOMICILIO GRATIS</strong> exclusivo solo en la ciudad de <strong>CALI</strong>.
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Ciudad *</label>
+          <input type="text" id="city-input" placeholder="Ej: Cali" required />
+        </div>
+        <div class="form-group">
+          <label>Barrio / Sector *</label>
+          <input type="text" id="neighborhood-input" placeholder="Ej: Granada / El Peñón" required />
+        </div>
+        <label for="step2-open" class="btn-action">Continuar al Pago &rarr;</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 2: SELECCIÓN DE MÉTODO DE PAGO -->
+  <div class="modal-overlay modal-step2-target">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>2. Método de Pago</h3>
+        <label for="close-all" class="close-btn">&times;</label>
+      </div>
+      <div class="payment-options">
+        <label for="step3-cod-open" class="payment-card hot-option">
+          <div class="payment-info">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+            <span>Pago Contra Entrega</span>
+          </div>
+          <span class="hot-badge">🔥 MÁS PEDIDO</span>
+        </label>
+
+        <a href="https://wa.me/573180549717?text=Hola!%20Deseo%20pagar%20mi%20pedido%20por%20PSE" target="_blank" class="payment-card">
+          <div class="payment-info">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>PSE / Transferencia</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+
+        <a href="https://wa.me/573180549717?text=Hola!%20Deseo%20pagar%20mi%20pedido%20con%20Tarjeta%20de%20Cr%C3%A9dito" target="_blank" class="payment-card">
+          <div class="payment-info">
+            <i class="fa-solid fa-credit-card"></i>
+            <span>Tarjeta de Crédito</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-muted"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 3: FORMULARIO DE REGISTRO DE DATOS Y RESUMEN DEL PEDIDO -->
+  <div class="modal-overlay modal-step3-cod-target">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>3. Datos de Confirmación</h3>
+        <label for="close-all" class="close-btn">&times;</label>
+      </div>
+      <div class="modal-body">
+        
+        <form id="order-form" action="https://formsubmit.co/castanojuanpablo147@gmail.com" method="POST">
+          
+          <input type="hidden" name="_subject" value="🛍️ ¡Nuevo Pedido Registrado - JP AudioStudio!">
+          <input type="hidden" name="_captcha" value="false">
+
+          <!-- CAMPOS OCULTOS QUE RECIBEN LA INFORMACIÓN AUTOMÁTICA DEL JS -->
+          <input type="hidden" name="Resumen del Pedido" id="form-order-summary">
+          <input type="hidden" name="Monto Total" id="form-order-total">
+          <input type="hidden" name="Ciudad" id="form-city">
+          <input type="hidden" name="Barrio" id="form-neighborhood">
+
+          <!-- VISUALIZACIÓN DEL RESUMEN -->
+          <div class="order-box-preview" id="order-box-preview">
+            <!-- JS renderiza aquí el resumen antes de enviar -->
+          </div>
+
+          <hr class="form-divider">
+
+          <div class="form-group">
+            <label>Nombre Completo *</label>
+            <input type="text" name="Nombre del Cliente" placeholder="Tu nombre y apellido" required />
+          </div>
+          <div class="form-group">
+            <label>Número de Celular *</label>
+            <input type="tel" name="Celular" placeholder="Ej: 3180549717" required />
+          </div>
+          <div class="form-group">
+            <label>Dirección Exacta *</label>
+            <input type="text" name="Dirección de Entrega" placeholder="Ej: Calle 10 # 5-20 Apt 301" required />
+          </div>
+          <div class="form-group">
+            <label>Hora Preferida de Entrega *</label>
+            <select name="Horario Preferido" required>
+              <option value="" disabled selected>Selecciona una franja horaria</option>
+              <option value="Mañana (8:00 AM - 12:00 PM)">Mañana (8:00 AM - 12:00 PM)</option>
+              <option value="Tarde (2:00 PM - 6:00 PM)">Tarde (2:00 PM - 6:00 PM)</option>
+              <option value="Noche (6:00 PM - 8:00 PM)">Noche (6:00 PM - 8:00 PM)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Correo Electrónico *</label>
+            <input type="email" name="Correo del Cliente" placeholder="tu@correo.com" required />
+          </div>
+
+          <button type="submit" class="btn-action" id="btn-submit-form">
+            Confirmar y Procesar Pedido &rarr;
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 4: CONFIRMACIÓN EXITOSA -->
+  <div class="modal-overlay modal-step4-success-target">
+    <div class="modal-content text-center">
+      <div class="success-icon">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>¡Pedido Procesado con Éxito! 🎉</h2>
+      <p class="success-msg">
+        Tu solicitud ha sido enviada correctamente. Si tienes alguna duda o deseas atención personalizada inmediata, haz clic en el botón a continuación para hablar directamente con nosotros en WhatsApp.
+      </p>
+
+      <a id="whatsapp-direct-btn" href="https://wa.me/573180549717?text=Hola,%20acabo%20de%20realizar%20mi%20pedido%20en%20JP%20AudioStudio%20y%20tengo%20algunas%20dudas" target="_blank" class="btn-action btn-whatsapp-modal">
+        <i class="fa-brands fa-whatsapp"></i> Hablar por WhatsApp
+      </a>
+      
+      <label for="close-all" class="btn-secondary-modal" onclick="resetCart()">
+        Volver a la tienda
+      </label>
+    </div>
+  </div>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/573180549717?text=Hola%20JP%20AudioStudio!%20Deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20productos." class="whatsapp-btn-float" target="_blank" aria-label="Contacto WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Pie de Página -->
+  <footer id="contacto">
+    <div class="footer-content">
+      <div class="footer-quote">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>"El éxito no es la clave de la felicidad; la felicidad es la clave del éxito. Si amas lo que haces, tendrás éxito."</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>JP AudioStudio</strong>. Calidad, Garantía & Estilo Apple.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
